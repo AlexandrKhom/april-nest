@@ -26,8 +26,8 @@ export class ReviewController {
     return this.reviewService.create(dto);
   }
 
-  @Delete('_id')
-  async delete(@Param('_id') id: string) {
+  @Delete(':id')
+  async delete(@Param('id') id: string) {
     const deleteRev = await this.reviewService.delete(id);
     if (!deleteRev) {
       throw new HttpException(REVIEW_NOT_FOUND, HttpStatus.NOT_FOUND);
