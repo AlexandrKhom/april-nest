@@ -5,9 +5,8 @@ export type ReviewDocument = ReviewModel & Document;
 
 @Schema()
 export class ReviewModel {
-  @Prop()
-  _id: Types.ObjectId;
-
+  // @Prop()
+  // _id: Types.ObjectId;
   @Prop()
   name: string;
 
@@ -19,6 +18,9 @@ export class ReviewModel {
 
   @Prop()
   rating: number;
+
+  @Prop()
+  productId: Types.ObjectId;
 
   @Prop({ required: true, default: Date.now })
   createdAt: Date;
