@@ -5,9 +5,6 @@ export type AuthDocument = AuthModel & Document;
 
 @Schema()
 export class AuthModel {
-  @Prop()
-  _id: Types.ObjectId;
-
   @Prop({ unique: true })
   email: string;
 
