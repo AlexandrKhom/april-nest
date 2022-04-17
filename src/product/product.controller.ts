@@ -15,6 +15,7 @@ import { ProductModel } from './product.model';
 import { FindProductDto } from './dto/find-product.dto';
 import { CreateProductDto } from './dto/create-product.dto';
 import { ProductService } from './product.service';
+import { IdValidationPipe } from '../pipes/ad-validation.pipe';
 
 @Controller('product')
 export class ProductController {
@@ -25,8 +26,8 @@ export class ProductController {
     return this.productService.create(dto);
   }
 
-  @Get('_id')
-  async get(@Param('id') id: string) {
+  @Get(':id')
+  async get(@Param('id', IdValidationPipe) id: string) {
     const product = await this.productService.findById(id);
     if (!product) {
       throw new NotFoundException('product with this ID not found');
