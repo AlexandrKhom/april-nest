@@ -27,7 +27,6 @@ export class ReviewController {
     @Param('productId') productId: string,
     @UserEmailDecorator() email: string,
   ) {
-    console.log(email);
     return this.reviewService.findByProductId(productId);
   }
 

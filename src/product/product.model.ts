@@ -13,9 +13,6 @@ class ProductCharacteristics {
 @Schema()
 export class ProductModel {
   @Prop()
-  _id: Types.ObjectId;
-
-  @Prop()
   image: string;
 
   @Prop()
@@ -25,13 +22,10 @@ export class ProductModel {
   price: number;
 
   @Prop()
-  oldPrice: number;
+  oldPrice?: number;
 
   @Prop()
   credit: number;
-
-  @Prop()
-  calculatedRating: number;
 
   @Prop()
   description: string;
