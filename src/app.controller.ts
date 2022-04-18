@@ -7,6 +7,8 @@ export class AppController {
 
   @Get()
   getHello(): string {
+    console.log(process.env.MONGO_LOGIN);
+    console.log(typeof process.env.MONGO_PORT);
     return this.appService.getHello();
   }
 }
